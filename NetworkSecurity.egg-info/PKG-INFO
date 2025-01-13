@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: NetworkSecurity
+Version: 0.0.1
+Author: Mudit Mohan Aggarwal
+Author-email: mudit.m.aggarwal@gmail.com
+Requires-Dist: python-dotenv
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: seaborn
+Requires-Dist: pymongo
+Requires-Dist: certifi

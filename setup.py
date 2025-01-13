@@ -1,42 +1,30 @@
 
 
-from setuptools import find_packages,setup
+from setuptools import find_packages, setup
 from typing import List
 
-
-def get_requirements()->List[str]:
+def get_requirements() -> List[str]:
     """
-     this function will return the list of requirment s
+    This function reads the requirements.txt file and returns a list of dependencies.
     """
-
-
-    requirement_list:list[str]=[]
-    try :
-        with open("requirments.txt",'r') as f:
-            # read line bu libne 
-            lines = f.readlines()
-
-            # Process in each line 
-            for line in lines :
-                # requirement = [req.replace("\n","") for req in line]
-                # or we can strip it 
-                # we are stripingh it because we will for sure get the libe ahead so to go the next libne we need to remove it 
-                requirement = line.strip()
-                if requirement and requirement != '-e .':
-                    requirement_list.append(requirement)
-
+    requirements = []
+    try:
+        with open("requirments.txt", "r") as f:
+            for line in f:
+                # Strip newline and skip '-e .' 
+                line = line.strip()
+                if line and line != "-e .":
+                    requirements.append(line)
     except FileNotFoundError:
-        print("File not foiund")
-
-    return requirement_list
+        print("requirements.txt not found")
+    return requirements
 
 setup(
-
-    Name = "Network Security",
-    versin ="0.0.1",
-    author="Mudit",
-    author_email="mudit.m.aggarwal@gnail.com",
-    package=find_packages(),
-    install_requires=get_requirements()
-
+    name="NetworkSecurity",  # Fixed case
+    version="0.0.1",  # Fixed typo
+    author="Mudit Mohan Aggarwal",
+    author_email="mudit.m.aggarwal@gmail.com",
+    packages=find_packages(),  # Fixed key
+    install_requires=get_requirements(),  # Reads from requirements.txt
 )
+

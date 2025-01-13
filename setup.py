@@ -30,5 +30,13 @@ def get_requirements()->List[str]:
 
     return requirement_list
 
-print("hello hpw are you ")
-print(get_requirements())
+setup(
+
+    Name = "Network Security",
+    versin ="0.0.1",
+    author="Mudit",
+    author_email="mudit.m.aggarwal@gnail.com",
+    package=find_packages(),
+    install_requires=get_requirements()
+
+)

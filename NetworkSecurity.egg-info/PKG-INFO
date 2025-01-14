@@ -11,3 +11,4 @@ Requires-Dist: scikit-learn
 Requires-Dist: seaborn
 Requires-Dist: pymongo
 Requires-Dist: certifi
+Requires-Dist: pymongo[srv]==3.12

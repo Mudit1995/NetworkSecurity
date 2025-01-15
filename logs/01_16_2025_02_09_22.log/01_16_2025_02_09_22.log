@@ -1,0 +1,6 @@
+[ 2025-01-16 02:09:35,857 ] 20 root - INFO - Initiaite data ingeation
+[ 2025-01-16 02:09:46,027 ] 71 root - INFO - Perform train test spit ib the dataframe
+[ 2025-01-16 02:09:46,028 ] 73 root - INFO - Exited sloit _data_as_train_test method of data_ingestion class
+[ 2025-01-16 02:09:46,705 ] 81 root - INFO - Exporting train and test file path.
+[ 2025-01-16 02:09:46,708 ] 23 root - INFO - data ingestion completed
+[ 2025-01-16 02:09:46,721 ] 29 root - INFO - Initiate the data Validation

@@ -8,6 +8,7 @@ networksecurity/__init__.py
 networksecurity/cloud/__init__.py
 networksecurity/components/__init__.py
 networksecurity/components/data_ingestion.py
+networksecurity/components/data_validation.py
 networksecurity/constant/__init__.py
 networksecurity/constant/training_pipeline/__init__.py
 networksecurity/entity/__init__.py
@@ -19,3 +20,5 @@ networksecurity/logging/__init__.py
 networksecurity/logging/logger.py
 networksecurity/pipeline/__init__.py
 networksecurity/utils/__init__.py
+networksecurity/utils/main_utils/__init__.py
+networksecurity/utils/main_utils/utils.py

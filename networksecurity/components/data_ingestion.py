@@ -77,7 +77,7 @@ class DataIngestion:
 
             train_set.to_csv(self.data_ingestion_config.training_file_path, index=False, header=True)
             test_set.to_csv(self.data_ingestion_config.testing_file_path, index=False, header=True)
-            
+
             logging.info(f"Exporting train and test file path.")
             
         except Exception as e:
@@ -88,6 +88,7 @@ class DataIngestion:
         try:
             dataframe =  self.export_collection_as_dataframe()
             dataframe = self.export_data_inot_feature_store(dataframe)
+            # print(dataframe)
             self.split_data_as_train_test(dataframe)
             dataingestionartifact = DataIngestionArtifact(train_file_path=self.data_ingestion_config.training_file_path,test_file_path=self.data_ingestion_config.testing_file_path)
 

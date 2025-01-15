@@ -1,0 +1,4 @@
+[ 2025-01-15 04:48:55,173 ] 93 root - INFO - Starting the script...
+[ 2025-01-15 04:48:55,173 ] 96 root - INFO - Processing file: Network_Data/phisingData.csv
+[ 2025-01-15 04:48:57,836 ] 99 root - INFO - Converted records: 11055
+[ 2025-01-15 04:49:16,883 ] 101 root - INFO - Number of records inserted: 11055

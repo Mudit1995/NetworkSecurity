@@ -1,0 +1,12 @@
+[ 2025-01-16 06:05:29,003 ] 21 root - INFO - Initiaite data ingeation
+[ 2025-01-16 06:05:37,852 ] 71 root - INFO - Perform train test spit ib the dataframe
+[ 2025-01-16 06:05:37,853 ] 73 root - INFO - Exited sloit _data_as_train_test method of data_ingestion class
+[ 2025-01-16 06:05:38,497 ] 81 root - INFO - Exporting train and test file path.
+[ 2025-01-16 06:05:38,501 ] 24 root - INFO - data ingestion completed
+[ 2025-01-16 06:05:38,508 ] 30 root - INFO - Initiate the data Validation
+[ 2025-01-16 06:05:38,716 ] 48 root - INFO - Required number of columns: 2
+[ 2025-01-16 06:05:38,716 ] 49 root - INFO - Data frame has columns: 31
+[ 2025-01-16 06:05:38,716 ] 48 root - INFO - Required number of columns: 2
+[ 2025-01-16 06:05:38,716 ] 49 root - INFO - Data frame has columns: 31
+[ 2025-01-16 06:05:39,621 ] 33 root - INFO - data Validation Completed
+[ 2025-01-16 06:05:39,621 ] 40 root - INFO - Initiate the data Transformation

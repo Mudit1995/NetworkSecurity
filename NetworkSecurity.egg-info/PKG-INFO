@@ -17,3 +17,5 @@ Requires-Dist: dill
 Requires-Dist: pyaml
 Requires-Dist: MLFLOW
 Requires-Dist: dagshub
+Requires-Dist: fastapi
+Requires-Dist: uvicorn

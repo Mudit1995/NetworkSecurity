@@ -12,3 +12,5 @@ dill
 pyaml
 MLFLOW
 dagshub
+fastapi
+uvicorn

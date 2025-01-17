@@ -1,0 +1,70 @@
+[ 2025-01-17 09:39:31,482 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 09:39:31,490 ] 107 dagshub - INFO - Accessing as mudit.m.aggarwal
+[ 2025-01-17 09:39:31,737 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mudit.m.aggarwal/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-01-17 09:39:31,930 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 09:39:31,932 ] 107 dagshub - INFO - Initialized MLflow to track repo "mudit.m.aggarwal/NetworkSecurity"
+[ 2025-01-17 09:39:31,932 ] 107 dagshub - INFO - Repository mudit.m.aggarwal/NetworkSecurity initialized!
+[ 2025-01-17 09:39:33,608 ] 30 root - INFO - MongoDB connection successful
+[ 2025-01-17 09:40:02,476 ] 59 root - INFO - Starting training pipeline
+[ 2025-01-17 09:40:02,476 ] 37 root - INFO - Start Data Ingestion
+[ 2025-01-17 09:40:02,476 ] 70 root - ERROR - Error in training pipeline: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']]
+[ 2025-01-17 09:40:02,480 ] 71 root - ERROR - Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 39, in start_data_ingestion
+    dataingestionsrtifact = data_ingestion.initiate_data_ingestion()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataIngestion' object has no attribute 'initiate_data_ingestion'. Did you mean: 'Initiate_Data_ingestion'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 81, in run_pipeline
+    data_ingestion_artifact = self.start_data_ingestion()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 43, in start_data_ingestion
+    raise NetworkSecurityException(e,sys)
+networksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/app.py", line 63, in train_route
+    artifact = training_pipeline.run_pipeline()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 87, in run_pipeline
+    raise NetworkSecurityException(e,sys)
+networksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']]
+
+[ 2025-01-17 09:40:02,480 ] 82 root - ERROR - Server error: 500: {'error': 'Training Pipeline Error', 'message': "Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']]", 'traceback': 'Traceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 39, in start_data_ingestion\n    dataingestionsrtifact = data_ingestion.initiate_data_ingestion()\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'DataIngestion\' object has no attribute \'initiate_data_ingestion\'. Did you mean: \'Initiate_Data_ingestion\'?\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 81, in run_pipeline\n    data_ingestion_artifact = self.start_data_ingestion()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 43, in start_data_ingestion\n    raise NetworkSecurityException(e,sys)\nnetworksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message [\'DataIngestion\' object has no attribute \'initiate_data_ingestion\']\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/app.py", line 63, in train_route\n    artifact = training_pipeline.run_pipeline()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 87, in run_pipeline\n    raise NetworkSecurityException(e,sys)\nnetworksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message [\'DataIngestion\' object has no attribute \'initiate_data_ingestion\']]\n'}
+[ 2025-01-17 09:40:02,481 ] 83 root - ERROR - Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 39, in start_data_ingestion
+    dataingestionsrtifact = data_ingestion.initiate_data_ingestion()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataIngestion' object has no attribute 'initiate_data_ingestion'. Did you mean: 'Initiate_Data_ingestion'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 81, in run_pipeline
+    data_ingestion_artifact = self.start_data_ingestion()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 43, in start_data_ingestion
+    raise NetworkSecurityException(e,sys)
+networksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/app.py", line 63, in train_route
+    artifact = training_pipeline.run_pipeline()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 87, in run_pipeline
+    raise NetworkSecurityException(e,sys)
+networksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/app.py", line 72, in train_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: {'error': 'Training Pipeline Error', 'message': "Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message ['DataIngestion' object has no attribute 'initiate_data_ingestion']]", 'traceback': 'Traceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 39, in start_data_ingestion\n    dataingestionsrtifact = data_ingestion.initiate_data_ingestion()\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: \'DataIngestion\' object has no attribute \'initiate_data_ingestion\'. Did you mean: \'Initiate_Data_ingestion\'?\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 81, in run_pipeline\n    data_ingestion_artifact = self.start_data_ingestion()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 43, in start_data_ingestion\n    raise NetworkSecurityException(e,sys)\nnetworksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message [\'DataIngestion\' object has no attribute \'initiate_data_ingestion\']\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/app.py", line 63, in train_route\n    artifact = training_pipeline.run_pipeline()\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py", line 87, in run_pipeline\n    raise NetworkSecurityException(e,sys)\nnetworksecurity.exception.exceptin.NetworkSecurityException: Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [81] error message [Error occured in python script name [/Users/muditmohan/Desktop/NetworkSecurityPRoject/networksecurity/pipeline/training_pipeline.py] line number [39] error message [\'DataIngestion\' object has no attribute \'initiate_data_ingestion\']]\n'}
+

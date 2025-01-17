@@ -1,0 +1,12 @@
+[ 2025-01-17 11:55:36,613 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 11:55:36,620 ] 107 dagshub - INFO - Accessing as mudit.m.aggarwal
+[ 2025-01-17 11:55:36,912 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mudit.m.aggarwal/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-01-17 11:55:37,108 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 11:55:37,111 ] 107 dagshub - INFO - Initialized MLflow to track repo "mudit.m.aggarwal/NetworkSecurity"
+[ 2025-01-17 11:55:37,111 ] 107 dagshub - INFO - Repository mudit.m.aggarwal/NetworkSecurity initialized!
+[ 2025-01-17 11:55:38,471 ] 31 root - INFO - MongoDB connection successful
+[ 2025-01-17 11:55:38,607 ] 114 fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+

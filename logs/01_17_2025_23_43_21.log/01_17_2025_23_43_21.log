@@ -1,0 +1,8 @@
+[ 2025-01-17 23:43:29,142 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 23:43:29,148 ] 107 dagshub - INFO - Accessing as mudit.m.aggarwal
+[ 2025-01-17 23:43:29,420 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mudit.m.aggarwal/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-01-17 23:43:29,659 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-17 23:43:29,661 ] 107 dagshub - INFO - Initialized MLflow to track repo "mudit.m.aggarwal/NetworkSecurity"
+[ 2025-01-17 23:43:29,661 ] 107 dagshub - INFO - Repository mudit.m.aggarwal/NetworkSecurity initialized!
+[ 2025-01-17 23:43:31,151 ] 31 root - INFO - MongoDB connection successful
+[ 2025-01-17 23:44:15,817 ] 104 root - INFO - Starting prediction pipeline

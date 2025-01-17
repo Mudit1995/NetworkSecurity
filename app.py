@@ -1,6 +1,7 @@
 import sys 
 import os 
 import certifi
+from matplotlib import table
 from pymongo import collection
 ca = certifi.where()
 
@@ -49,6 +50,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+# read the templpate file for jinja technoque tp read the data from the valid_data to test it 
+from fastapi.templating import Jinja2Templates
+templates = Jinja2Templates(directory="./templates")
+
+from networksecurity.utils.ml_utils.model.estimator import NetowrkModel
+
 @app.get("/", tags=["authentication"])
 async def test():
     return RedirectResponse(url="/docs")
@@ -78,6 +86,40 @@ async def train_route():
                 }
             )
             
+    except Exception as e:
+        logging.error(f"Server error: {str(e)}")
+        logging.error(traceback.format_exc())
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error": "Server Error",
+                "message": str(e),
+                "traceback": traceback.format_exc()
+            }
+        )
+
+@app.post("/predict")
+async def predict_route(request: Request, file: UploadFile = File(...)):
+    try:
+        logging.info("Starting prediction pipeline")
+        # Read CSV file once
+        df = pd.read_csv(file.file)
+        
+        preprocessor = load_object("final_model/preprocessing.pkl")
+        model = load_object("final_model/model.pkl")
+        networ_model = NetowrkModel(preprocessor=preprocessor, model=model)
+        
+        print(df.iloc[0])
+        y_pred = networ_model.predict(df)
+        print(y_pred)
+        df['predicted_column'] = y_pred 
+        print(df['predicted_column'])
+        df.to_csv("predict_output/output.csv")
+
+        table_html = df.to_html(classes='table table-striped')
+        print(table_html)
+        return templates.TemplateResponse("table.html", {"request": request, "table": table_html})
+    
     except Exception as e:
         logging.error(f"Server error: {str(e)}")
         logging.error(traceback.format_exc())

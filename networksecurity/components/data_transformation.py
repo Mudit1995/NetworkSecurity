@@ -100,8 +100,7 @@ class DataTransformation:
 
             # save the preprocessor object calling the pickle file 
             save_object(self.data_transformation_config.transformed_object_file_path,preprcessor_object)
-
-
+            save_object("final_model/preprocessing.pkl",preprcessor_object)
 
             # preparing the artifacts 
 

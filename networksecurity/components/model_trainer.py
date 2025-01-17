@@ -20,6 +20,14 @@ from sklearn.metrics import r2_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import ( RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier) 
+import mlflow
+
+import dagshub
+
+import dagshub
+dagshub.init(repo_owner='mudit.m.aggarwal', repo_name='NetworkSecurity', mlflow=True)
+
+
 
 class MOdelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
@@ -30,7 +38,15 @@ class MOdelTrainer:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
 
-
+    def track_mlflow(self,best_model,classificationmetric):
+        with mlflow.start_run():
+            f1_score = classificationmetric.f1_score
+            precision_score = classificationmetric.precision_score
+            recall_score = classificationmetric.recall_score
+            mlflow.log_metric("f1_score",f1_score)
+            mlflow.log_metric("precision_score",precision_score)
+            mlflow.log_metric("recall_score",recall_score)
+            mlflow.sklearn.log_model(best_model,"model")
 
     def train_model(self,x_train,y_train,x_test,y_test):
         models = {
@@ -86,7 +102,15 @@ class MOdelTrainer:
         y_test_pred=best_model.predict(x_test)
         classification_test_metric=get_classification_score(y_true=y_test,y_pred=y_test_pred)
 
-        # track in the MLFLOW 
+      
+        # track in the MLFLOW useful to mainntain the whole life cycle of the models expereimtnts with the MLFLOW
+        #  this is for the train metrics 
+        self.track_mlflow(best_model,classification_train_metric)
+
+        # this is for the test metrics
+        self.track_mlflow(best_model,classification_test_metric)
+
+
         
 
 

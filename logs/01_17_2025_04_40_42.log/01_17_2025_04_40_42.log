@@ -1,0 +1,24 @@
+[ 2025-01-17 04:40:49,201 ] 22 root - INFO - Initiaite data ingeation
+[ 2025-01-17 04:40:59,759 ] 71 root - INFO - Perform train test spit ib the dataframe
+[ 2025-01-17 04:40:59,760 ] 73 root - INFO - Exited sloit _data_as_train_test method of data_ingestion class
+[ 2025-01-17 04:41:00,544 ] 81 root - INFO - Exporting train and test file path.
+[ 2025-01-17 04:41:00,549 ] 25 root - INFO - data ingestion completed
+[ 2025-01-17 04:41:00,560 ] 31 root - INFO - Initiate the data Validation
+[ 2025-01-17 04:41:00,882 ] 48 root - INFO - Required number of columns: 2
+[ 2025-01-17 04:41:00,882 ] 49 root - INFO - Data frame has columns: 31
+[ 2025-01-17 04:41:00,882 ] 48 root - INFO - Required number of columns: 2
+[ 2025-01-17 04:41:00,882 ] 49 root - INFO - Data frame has columns: 31
+[ 2025-01-17 04:41:02,004 ] 34 root - INFO - data Validation Completed
+[ 2025-01-17 04:41:02,004 ] 41 root - INFO - Initiate the data Transformation
+[ 2025-01-17 04:41:02,005 ] 55 root - INFO - Enter inot the instaitae the data Trnasformation
+[ 2025-01-17 04:41:02,005 ] 57 root - INFO - Start data Tranformation
+[ 2025-01-17 04:41:02,288 ] 42 root - INFO - Enter get _data_tranfomer_object method of tranfomration class
+[ 2025-01-17 04:41:02,288 ] 46 root - INFO - initiailise the KNN iimputer
+[ 2025-01-17 04:41:02,374 ] 51 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-01-17 04:41:02,399 ] 55 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-01-17 04:41:02,430 ] 44 root - INFO - data Transformation Completed
+[ 2025-01-17 04:41:02,430 ] 47 root - INFO - Model Training Startecd
+[ 2025-01-17 05:05:21,547 ] 51 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-01-17 05:05:21,577 ] 55 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-01-17 05:05:21,577 ] 128 root - INFO - Model trainer artifact 
+[ 2025-01-17 05:05:21,583 ] 52 root - INFO - Model Training Completed

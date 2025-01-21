@@ -1,0 +1,6 @@
+[ 2025-01-21 07:16:29,087 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-21 07:16:29,095 ] 107 dagshub - INFO - Accessing as mudit.m.aggarwal
+[ 2025-01-21 07:16:29,386 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/mudit.m.aggarwal/NetworkSecurity "HTTP/1.1 200 OK"
+[ 2025-01-21 07:16:29,584 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2025-01-21 07:16:29,586 ] 107 dagshub - INFO - Initialized MLflow to track repo "mudit.m.aggarwal/NetworkSecurity"
+[ 2025-01-21 07:16:29,587 ] 107 dagshub - INFO - Repository mudit.m.aggarwal/NetworkSecurity initialized!

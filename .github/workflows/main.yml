@@ -31,7 +31,7 @@ jobs:
       - name: install utilities 
         run: 
           sudo apt-get update
-          sudo apt-get install -y awscli
+          sudo apt-get install -y jq unzip
       - name : configure aws credentials 
         uses: aws-actions/configure-aws-credentials@v1  
         with:
@@ -43,5 +43,5 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-            
+
 

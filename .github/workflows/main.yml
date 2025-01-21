@@ -19,5 +19,4 @@ jobs:
         run: echo "Linting Repository"
 
       - name: Run unit tests
-        run: echo "Running unit tests"
-        
+        run: echo "Running all the unit test cases"
